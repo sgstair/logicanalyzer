@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -36,9 +36,19 @@ entity toplevel is
 end toplevel;
 
 architecture Behavioral of toplevel is
-
+	signal counter : unsigned(25 downto 0) := (others => '0');
 begin
 
+	ledred <= counter(25);
+	ledgreen <= counter(24);
+
+	process(clk)
+	begin
+		if clk'event and clk='1' then
+			counter <= counter + 1;
+		end if;
+	
+	end process;
 
 end Behavioral;
 

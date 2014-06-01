@@ -1,0 +1,5 @@
+
+
+NET "clk" LOC = T8;
+NET "ledred" LOC = T15;
+NET "ledgreen" LOC = R14;
